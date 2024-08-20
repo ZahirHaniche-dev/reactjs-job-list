@@ -22,6 +22,6 @@ return (
         <span className="text-teal-500 font-semibold bg-teal-100 px-2 py-1 rounded-full">CSS</span>
         <span className="text-teal-500 font-semibold bg-teal-100 px-2 py-1 rounded-full">JavaScript</span>
     </div>
-    </div>
+</div>
 )
 }

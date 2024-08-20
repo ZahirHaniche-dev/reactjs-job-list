@@ -9,7 +9,7 @@ const App = () => {
       <div className="mb-8">
         <Header />
       </div>
-      <div className="max-w-4xl mx-auto p-6">
+      <div className="max-w-[80%] mx-auto p-6">
         <Filter />
         <JobList />
       </div>
