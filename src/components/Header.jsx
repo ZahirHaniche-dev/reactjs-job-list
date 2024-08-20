@@ -3,10 +3,10 @@ import "./css/components.css"
 export default function Header() {
   return (
     <>
-      <header class="bg-header">
-        <div class="overlay">
+      <header className="bg-header">
+        <div className="overlay">
         </div>
-        <div class="bg-image">
+        <div className="bg-image">
         </div>
       </header>
     </>

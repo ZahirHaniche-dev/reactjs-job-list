@@ -10,9 +10,7 @@ const App = () => {
         <Header />
       </div>
       <div className="max-w-4xl mx-auto p-6">
-        {/* Filter Tags */}
         <Filter />
-        {/* Job Listings */}
         <JobList />
       </div>
       <Footer />

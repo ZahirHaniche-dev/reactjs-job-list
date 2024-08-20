@@ -10,10 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-redux": "^9.1.2",
+    "redux": "^5.0.1",
     "tailwindcss": "^3.4.10"
   },
   "devDependencies": {
