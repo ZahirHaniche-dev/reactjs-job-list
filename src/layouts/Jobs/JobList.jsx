@@ -43,28 +43,38 @@ export default function JobList() {
             <ul>
                 {data.map(job => (
                     <div>
-                        <li key={job.id} className="text-slate-50 text-xl flex-col items-start mb-4">       
-                            <div className="bg-white shadow-md rounded-md p-6 flex items-center justify-between">
+                        <li key={ job.id } className="text-slate-50 text-xl flex-col items-start mb-4">       
+                            <div className="bg-white shadow-custom rounded-md p-6 flex items-center justify-between">
                                 <div className="flex items-center space-x-10">
-                                    <img src={job.logo} alt={`${job.company} logo`}  className="p-2" />
+                                    <img src={ job.logo } alt={`${ job.company } logo`}  className="p-2" />
                                     <div>
                                         <div className="flex space-x-2 pb-5">
-                                            <h3 className="text-teal-500 font-semibold text-lg">{job.company}</h3>
-                                            <span className={`${!job.new?"hidden":"block"}  flex items-center text-xs text-teal-50 bg-teal-600 px-1 py-1 justify-center  rounded-full`}>NEW !</span>
-                                            <span className={`${!job.featured?"hidden":"block"} flex items-center text-xs text-white bg-slate-900 px-1 py-1 rounded-ful align-middle`}>FEATURED</span>
+                                            <h3 className="text-teal-500 font-semibold text-lg mr-2">{ job.company }</h3>
+                                            <span className={`${!job.new?"hidden":"block"}  flex items-center text-xs text-teal-50 bg-teal-600 px-1 py-1 justify-center pt-1 rounded-md`}>NEW !</span>
+                                            <span className={`${!job.featured?"hidden":"block"} flex items-center text-xs text-white bg-slate-900 px-1 py-1 rounded-md pt-1 align-middle`}>FEATURED</span>
                                         </div>
-                                        <h2 className="font-bold text-lg text-teal-800 pb-5">{job.position}</h2>
-                                        
-                                        <p className="text-gray-500 text-sm">{job.postedAt} • {job.contract} • {job.location}</p>
+                                        <div>
+                                            <h2 className="font-bold text-lg text-teal-800 pb-5">{job.position}</h2>
+                                            <p className="text-gray-500 text-sm">{ job.postedAt } • { job.contract } • { job.location }</p>
+                                        </div>
                                     </div>
-                                    <ul className="flex space-x-8 mt-2">
-                                        {skills.map(skill =>
-                                            <li key={skill.id} className="text-teal-500 font-semibold hover:bg-teal-600 
-                                            hover:text-slate-50 text-lg px-2 py-1 cursor-pointer">{skill.value}</li>
-                                        )}
-                                    </ul>
+                                    
                                 </div>
-                                
+                                <div className="flex space-x-4 mt-2">
+                                        { job.languages.map(language => (
+                                        <span className='text-teal-500 font-semibold hover:bg-teal-600 
+                                        hover:text-slate-50 text-lg px-2 py-1 cursor-pointer'>{ language }</span>
+                                        ))}
+                                        { job.tools.map(tool => (
+                                        <span className="text-teal-500 font-semibold hover:bg-teal-600 
+                                        hover:text-slate-50 text-lg px-2 py-1 cursor-pointer">{ tool }</span>
+
+                                        ))} 
+                                        <span className="text-teal-500 font-semibold hover:bg-teal-600 
+                                        hover:text-slate-50 text-lg px-2 py-1 cursor-pointer">{ job.level }</span>
+                                        <span className='text-teal-500 font-semibold hover:bg-teal-600 
+                                        hover:text-slate-50 text-lg px-2 py-1 cursor-pointer"'>{ job.role }</span>
+                                </div>
                             </div>
                         </li>
                     </div>

@@ -9,7 +9,10 @@ module.exports = {
       fontFamily: {
         spartan: ['Spartan', 'sans-serif'], // Ajoutez la police Spartan
       },
-  },
+      boxShadow: {
+        'custom': '4px 7px 24px -1px rgba(0, 0, 0, 0.45)',
+      }
+    },
   },
   plugins: [],
 }
