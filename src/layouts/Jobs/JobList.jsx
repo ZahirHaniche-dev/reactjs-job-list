@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getData } from "../../features/jobs";
-import { addOne, removeOne } from '../../features/skills';
+import { addOne } from '../../features/skills';
 import spinner from "../../assets/spinner.svg";
+import FilterList from '../Filter/FilterList';
 
 export default function JobList() {
 
@@ -71,38 +72,11 @@ export default function JobList() {
     }
 
     const skillsList = useSelector(state => state.skills)
-    console.log(skillsList.skills.name);
-    
+    const dataLength = (data && data.length) ? data.length : 0;
 
     return (
         <div>
-            { /* skillsList.skills.length > 0 && skillsList.skills.map(skill => (
-                    <span 
-                    key={ skill.id }
-                    className='text-slate-900 font-semibold  text-lg px-2 py-1 cursor-pointer'>
-                        {`You have selected ${skill.quantity} ${
-                            skill.quantity > 1 ? 'criteria' : 'criterion'
-                        }`}
-                </span>
-                )) */ }
-
-            <div className={`${skillsList.skills.length === 0 ? "hidden" : "block"} space-x-6
-                        bg-white shadow-custom rounded-md p-6 my-6 flex items-center `}>
-                <div className="flex space-x-2 mt-2 items-center">
-                    { skillsList.skills.length > 0 && skillsList.skills.map(skill => (
-                        <>
-                            <span className="text-teal-500 font-semibold text-xl px-2 py-1 cursor-pointer mt-1">
-                                {skill.name}
-                            </span>
-                            <div onClick={() => dispatch(removeOne(skill.name))} 
-                            className="flex items-center justify-center w-8 h-8 rounded bg-teal-600 text-slate-50 cursor-pointer bg-teal-500 hover:bg-slate-900 ">
-                                <span className="text-4xl font-bold text-white">-</span>
-                            </div>
-                        </>
-                    ))}
-                </div>
-            </div>
-
+            <FilterList skillsList={skillsList} dataLength={dataLength} />
             {contentData}
         </div>
     );
