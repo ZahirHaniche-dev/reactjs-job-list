@@ -1,35 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getData } from "../../features/jobs";
+import { addOne, removeOne } from '../../features/skills';
 import spinner from "../../assets/spinner.svg";
-import { nanoid } from '@reduxjs/toolkit';
 
 export default function JobList() {
 
     const dispatch = useDispatch();
     const { data, loading, error } = useSelector(state => state.jobs);
-    const [skills, useSkills] = useState([
-        {
-            id: nanoid(4),
-            value:"Frontend"
-        },
-        {
-            id: nanoid(4),
-            value:"Senior"
-        },
-        {
-            id: nanoid(4),
-            value:"HTML"
-        },
-        {
-            id: nanoid(4),
-            value:"CSS"
-        },
-        {
-            id: nanoid(4),
-            value:"JavaScript"
-        },
-    ])
 
     useEffect(() => {
         dispatch(getData());
@@ -40,7 +18,7 @@ export default function JobList() {
     if (error) contentData = <p className="text-red-600">An error has occurred</p>;
     if (data) {
         contentData = (
-            <ul>
+            <div>
                 {data.map(job => (
                     <div>
                         <li key={ job.id } className="text-slate-50 text-xl flex-col items-start mb-4">       
@@ -62,30 +40,69 @@ export default function JobList() {
                                 </div>
                                 <div className="flex space-x-4 mt-2">
                                         { job.languages.map(language => (
-                                        <span className='text-teal-500 font-semibold hover:bg-teal-600 
+                                        <span key={ language.id }
+                                        onClick={() => dispatch(addOne(language))}
+                                        className='text-teal-500 font-semibold hover:bg-teal-600 
                                         hover:text-slate-50 text-lg px-2 py-1 cursor-pointer'>{ language }</span>
                                         ))}
                                         { job.tools.map(tool => (
-                                        <span className="text-teal-500 font-semibold hover:bg-teal-600 
+                                        <span key={ tool.id }
+                                        onClick={() => dispatch(addOne(tool))}
+                                        className="text-teal-500 font-semibold hover:bg-teal-600 
                                         hover:text-slate-50 text-lg px-2 py-1 cursor-pointer">{ tool }</span>
 
                                         ))} 
-                                        <span className="text-teal-500 font-semibold hover:bg-teal-600 
+                                        <span 
+                                        onClick={() => dispatch(addOne(job.level))}
+                                        className="text-teal-500 font-semibold hover:bg-teal-600 
                                         hover:text-slate-50 text-lg px-2 py-1 cursor-pointer">{ job.level }</span>
-                                        <span className='text-teal-500 font-semibold hover:bg-teal-600 
-                                        hover:text-slate-50 text-lg px-2 py-1 cursor-pointer"'>{ job.role }</span>
+                                        <span 
+                                        onClick={() => dispatch(addOne(job.role))}
+                                        className="text-teal-500 font-semibold hover:bg-teal-600 
+                                        hover:text-slate-50 text-lg px-2 py-1 cursor-pointer">{ job.role }</span>
                                 </div>
                             </div>
                         </li>
                     </div>
                     
                 ))}
-            </ul>
+            </div>
         );
     }
 
+    const skillsList = useSelector(state => state.skills)
+    console.log(skillsList.skills.name);
+    
+
     return (
         <div>
+            { /* skillsList.skills.length > 0 && skillsList.skills.map(skill => (
+                    <span 
+                    key={ skill.id }
+                    className='text-slate-900 font-semibold  text-lg px-2 py-1 cursor-pointer'>
+                        {`You have selected ${skill.quantity} ${
+                            skill.quantity > 1 ? 'criteria' : 'criterion'
+                        }`}
+                </span>
+                )) */ }
+
+            <div className={`${skillsList.skills.length === 0 ? "hidden" : "block"} space-x-6
+                        bg-white shadow-custom rounded-md p-6 my-6 flex items-center `}>
+                <div className="flex space-x-2 mt-2 items-center">
+                    { skillsList.skills.length > 0 && skillsList.skills.map(skill => (
+                        <>
+                            <span className="text-teal-500 font-semibold text-xl px-2 py-1 cursor-pointer mt-1">
+                                {skill.name}
+                            </span>
+                            <div onClick={() => dispatch(removeOne(skill.name))} 
+                            className="flex items-center justify-center w-8 h-8 rounded bg-teal-600 text-slate-50 cursor-pointer bg-teal-500 hover:bg-slate-900 ">
+                                <span className="text-4xl font-bold text-white">-</span>
+                            </div>
+                        </>
+                    ))}
+                </div>
+            </div>
+
             {contentData}
         </div>
     );

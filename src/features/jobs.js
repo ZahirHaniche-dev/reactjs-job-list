@@ -12,7 +12,7 @@ export const jobs = createSlice({
   reducers: {
     addData: (state, action) => {
       state.data = action.payload;
-      state.loading = false; // Arrêtez le chargement une fois les données récupérées
+      state.loading = false; 
     },
     addLoader: (state) => {
       state.loading = true;

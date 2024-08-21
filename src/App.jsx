@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Filter from "./layouts/Filter/Filter";
 import JobList from "./layouts/Jobs/JobList";
 
 const App = () => {
@@ -10,7 +9,6 @@ const App = () => {
         <Header />
       </div>
       <div className="max-w-[80%] mx-auto p-6">
-        <Filter />
         <JobList />
       </div>
       <Footer />
