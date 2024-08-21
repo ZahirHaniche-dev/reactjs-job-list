@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import JobList from "./layouts/Jobs/JobList";
+import JobsList from "./layouts/Jobs/JobsList";
 
 const App = () => {
   return (
@@ -9,7 +9,7 @@ const App = () => {
         <Header />
       </div>
       <div className="max-w-[80%] mx-auto p-6">
-        <JobList />
+        <JobsList />
       </div>
       <Footer />
     </div>
