@@ -38,7 +38,7 @@ export default function JobsList() {
                 {filteredData.map(job => (
                     <li key={job.id} className="bg-white shadow-custom rounded p-6 flex flex-col md:flex-row md:items-center justify-between hover:border-l-4 hover:border-teal-600 cursor-pointer">
                         <div className="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-8">
-                            <img src={job.logo} alt={`${job.company} logo`} className="w-12 h-12 md:w-16 md:h-16" />
+                            <img src={job.logo} alt={`${job.company} logo`} className="w-14 h-14 md:w-24 md:h-24" />
                             <div className="flex flex-col space-y-2">
                                 <div className="flex flex-wrap items-center space-x-2">
                                     <h3 className="text-teal-600 font-semibold text-lg">{job.company}</h3>
