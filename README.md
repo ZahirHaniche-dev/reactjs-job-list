@@ -5,7 +5,7 @@
 
 ## Description
 
-Box Generator est une application web développée en utilisant ReactJS et Vue. Ce projet permet de générer des boîtes personnalisées en fonction des paramètres définis par l'utilisateur. L'application utilise ReactJS pour le rendu des composants et Vue pour certaines fonctionnalités dynamiques.
+ ⚛️⚡🎨 Pour ce projet, j’ai choisi Vite et ReactJS, un duo puissant pour créer des applications web rapides et réactives, ainsi que Tailwind CSS pour son approche utilitaire.
 
 🚀 https://www.frontendmentor.io/solutions/reponsive-job-listings-with-filtering---reactjs-and-tailwindcss-fqzgf4TZEk
 
