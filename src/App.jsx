@@ -8,7 +8,7 @@ const App = () => {
       <div className="mb-8">
         <Header />
       </div>
-      <div class="max-w-[80%] mx-auto p-0 xs:p-0 sm:p-6">
+      <div class="max-w-[95%] mx-auto p-0 xs:p-0 sm:p-6">
         <JobsList />
       </div>
       <Footer />
