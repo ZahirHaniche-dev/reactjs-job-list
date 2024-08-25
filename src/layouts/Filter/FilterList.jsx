@@ -11,8 +11,8 @@ export default function FilterList({ skillsList, dataLength }) {
             <div className={`${skillsList.skills.length === 0 ? "hidden" : "block"} bg-white shadow-custom rounded p-4 sm:p-6 mb-16 flex flex-col sm:flex-row items-start sm:items-center justify-between`}>
                 <div className="flex flex-wrap space-x-2 mt-2 sm:mt-0">
                     {skillsList.skills.length > 0 && skillsList.skills.map((skill, index) => (
-                        <div key={index} className="flex items-center space-x-2 mb-2 sm:mb-0">
-                            <span className="text-teal-600 font-semibold text-base sm:text-lg px-2 py-2 cursor-pointer">
+                        <div key={index} className="flex items-center space-x-2 mb-2 sm:mb-0 ">
+                            <span className="text-teal-600 font-semibold text-base sm:text-lg cursor-pointer">
                                 {skill.name}
                             </span>
                             <div 
