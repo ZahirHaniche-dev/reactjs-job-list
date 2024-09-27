@@ -9,6 +9,9 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white&color=blue)
 
+![image](https://github.com/user-attachments/assets/b1719b4a-76be-4eec-95a1-20b53dd89da5)
+
+
 ## Description
 
  ⚛️⚡🎨 Pour ce projet, j’ai choisi Vite et ReactJS, un duo puissant pour créer des applications web rapides et réactives, ainsi que Tailwind CSS pour son approche utilitaire.
